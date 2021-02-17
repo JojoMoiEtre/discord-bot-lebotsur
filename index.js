@@ -4,7 +4,7 @@ const Puissance4 = require('./Puissance4');
 const Pendu = require('./Pendu');
 
 const bot = new Discord.Client;
-char prefix = '/';
+var prefix = '/';
 
 const puissance4 = new Puissance4(bot);
 const pendu = new Pendu(bot);
