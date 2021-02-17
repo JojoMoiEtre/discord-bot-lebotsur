@@ -16,7 +16,7 @@ function getRandomInt(max){
 // Statue du bot
 bot.on("ready", async () => {
     bot.user.setStatus("online");
-    bot.user.setActivity("la plèbe", {type: 'WATCHING'});
+    bot.user.setActivity("la plèbe (:help)", {type: 'WATCHING'});
 })
 
 // Blague "hin" "deux" "trois" "soleil"
@@ -70,13 +70,13 @@ bot.on("message", async message => {
 
 //Jeux
 bot.on('message', async message => {
-    if (message.content.toLowerCase() === '!puissance4') {
+    if (message.content.toLowerCase() === ':puissance4') {
         puissance4.newGame(message);
     }
-    else if (message.content.toLowerCase() === '!pendu') {
+    else if (message.content.toLowerCase() === ':pendu') {
         pendu.newGame(message);
     }
-    else if (message.content.toLowerCase() === '!help') {
+    else if (message.content.toLowerCase() === ':help') {
         const embed = new Discord.MessageEmbed()
             .setColor('#fc2eff')
             .setTitle('Help - Commandes')
