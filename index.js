@@ -82,7 +82,7 @@ bot.on('message', async message => {
             .setTitle('Help - Commandes')
             .setDescription("Pour le moment je ne sais faire que 2 choses (parce que jojo se touche les couilles au lieu de m'ajouter des fonctionnalités)\n"
                             +"\n**!puissance4** - Normalement tu sais lire mais au cas où t'ai un QI inférieur à 10, cette commande permet de lancer une partie de Puissance 4"
-                            +"\n**!pendu** - Si t’es vraiment con ou conne (pas de sexisme ici) il s'agit du jeu du pendu, le truc ou il faut deviner un mot sinon il y a un Jean-Michel qui meurt\n#RIPJeanMichel"
+                            +"\n**!pendu** - Si t’es vraiment con ou conne (pas de sexisme ici) il s'agit du jeu du pendu, le truc ou il faut deviner un mot sinon il y a un Jean-Michel innocent qui meurt\n#RIPJeanMichel"
                             )
             .setTimestamp();
         message.channel.send(embed);
