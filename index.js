@@ -81,7 +81,7 @@ bot.on('message', async message => {
         const embed = new Discord.MessageEmbed()
             .setColor('#fc2eff')
             .setTitle('Help - Commandes')
-            .setDescription("Pour le moment je ne sais faire que 2 choses (parce que jojo se touche les couilles au lieu de m'ajouter des fonctionnalités)\n")
+            .setDescription("Pour le moment je ne sais faire grand chose (parce que jojo se touche les couilles au lieu de m'ajouter des fonctionnalités)\n")
             .addField("Jeux", "**" + prefix + "puissance4** - Normalement tu sais lire mais au cas où t'ai un QI inférieur à 10, cette commande permet de lancer une partie de Puissance 4"
                             +"\n**" + prefix + "pendu** - Si t’es vraiment con ou conne (pas de sexisme ici) il s'agit du jeu du pendu, le truc ou il faut deviner un mot sinon il y a un Jean-Michel qui meurt\n#RIPJeanMichel"         
                             , false)
