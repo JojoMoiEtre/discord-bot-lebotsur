@@ -85,7 +85,7 @@ bot.on('message', async message => {
             .addField("Jeux", "**" + prefix + "puissance4** - Normalement tu sais lire mais au cas où t'ai un QI inférieur à 10, cette commande permet de lancer une partie de Puissance 4"
                             +"\n**" + prefix + "pendu** - Si t’es vraiment con ou conne (pas de sexisme ici) il s'agit du jeu du pendu, le truc ou il faut deviner un mot sinon il y a un Jean-Michel qui meurt\n#RIPJeanMichel"         
                             , false)
-            .addField("Jeux", "**" + prefix + "paudrey** - Tout savoir sur notre magnifique Paudrey"
+            .addField("Tout savoir sur...", "**" + prefix + "paudrey** - Tout savoir sur notre magnifique Paudrey"
                             +"\n**" + prefix + "bot** - Tout savoir sur le bot génial que je suis"
                             +"\n**" + prefix + "lebg** - Tout savoir sur ce BG"
                             , false)               
