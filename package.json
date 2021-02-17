@@ -1,5 +1,5 @@
 {
-  "name": "discord-bot-lebotsur",
+  "name": "c",
   "version": "1.0.0",
   "description": "The Best Bot",
   "main": "./index.js",
@@ -12,5 +12,6 @@
     "canvas": "^2.6.1",
     "discord.js": "^12.3.1",
     "express": "^4.17.1"
-  }
+  },
+  "devDependencies": {}
 }
