@@ -4,6 +4,7 @@ const Puissance4 = require('./Puissance4');
 const Pendu = require('./Pendu');
 
 const bot = new Discord.Client;
+char prefix = '/';
 
 const puissance4 = new Puissance4(bot);
 const pendu = new Pendu(bot);
@@ -16,7 +17,7 @@ function getRandomInt(max){
 // Statue du bot
 bot.on("ready", async () => {
     bot.user.setStatus("online");
-    bot.user.setActivity("la plèbe (:help)", {type: 'WATCHING'});
+    bot.user.setActivity("la plèbe (" + prefix + "help)", {type: 'WATCHING'});
 })
 
 // Blague "hin" "deux" "trois" "soleil"
@@ -70,13 +71,13 @@ bot.on("message", async message => {
 
 //Jeux
 bot.on('message', async message => {
-    if (message.content.toLowerCase() === ':puissance4') {
+    if (message.content.toLowerCase() === prefix + 'puissance4') {
         puissance4.newGame(message);
     }
-    else if (message.content.toLowerCase() === ':pendu') {
+    else if (message.content.toLowerCase() === prefix + 'pendu') {
         pendu.newGame(message);
     }
-    else if (message.content.toLowerCase() === ':help') {
+    else if (message.content.toLowerCase() === prefix + 'help') {
         const embed = new Discord.MessageEmbed()
             .setColor('#fc2eff')
             .setTitle('Help - Commandes')
