@@ -1,12 +1,12 @@
 {
-  "name": "discord-snake-game",
+  "name": "discord-bot-lebotsur",
   "version": "1.0.0",
-  "description": "Snake, but in Discord",
-  "main": "src/index.js",
+  "description": "The Best Bot",
+  "main": "./index.js",
   "scripts": {
-    "run": "node ."
+    "run": "node index.js"
   },
-  "author": "TurkeyDev",
+  "author": "JojoMoiEtre",
   "license": "ISC",
   "dependencies": {
     "canvas": "^2.6.1",
