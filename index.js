@@ -1,5 +1,6 @@
 const { SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION } = require("constants");
 const Discord = require('discord.js');
+const token = require("./token.json");
 const Puissance4 = require('./Puissance4');
 const Pendu = require('./Pendu');
 
@@ -23,7 +24,7 @@ bot.on("ready", async () => {
 
 // Blague "hin" "deux" "trois" "soleil"
 bot.on("message", async message => {
-    if(getRandomInt(4) === 1){
+    if(getRandomInt(3) === 1){
         if(message.content.includes("hein") || message.content.includes("Hein") || message.content.includes("HEIN") || message.content.includes("hin") || message.content.includes("Hin") || message.content.includes("HIN")){
             if(message.content.length < 5 || message.content.length < 8 && (message.content.endsWith("!") || message.content.endsWith("?"))){
                 message.channel.send(`Deux`);
@@ -49,7 +50,7 @@ bot.on("message", async message => {
 
 // Blague "ah" "tchoum"
 bot.on("message", async message => {
-    if(getRandomInt(4) === 1){
+    if(getRandomInt(3) === 1){
         if(message.content.includes("ah") || message.content.includes("Ah") || message.content.includes("AH") || message.content.includes("ha") || message.content.includes("Ha") || message.content.includes("HA")){
             if(message.content.length < 3 || message.content.length < 5 && (message.content.endsWith("!") || message.content.endsWith("?"))){
                 message.channel.send(`Tchoum`);
@@ -60,7 +61,7 @@ bot.on("message", async message => {
 
 // Blague "oui" "stisti"
 bot.on("message", async message => {
-    if(getRandomInt(4) === 1){
+    if(getRandomInt(3) === 1){
         if(message.content.includes("oui") || message.content.includes("Oui") || message.content.includes("OUI")){
             if(message.content.length < 4 || message.content.length < 6 && (message.content.endsWith("!") || message.content.endsWith("?"))){
                 message.channel.send(`Stiti`);
@@ -81,11 +82,11 @@ bot.on('message', async message => {
         const embed = new Discord.MessageEmbed()
             .setColor('#fc2eff')
             .setTitle('Help - Commandes')
-            .setDescription("Pour le moment je ne sais faire grand chose (parce que jojo se touche les couilles au lieu de m'ajouter des fonctionnalités)\n")
+            .setDescription("Pour le moment je ne sais faire que 2 choses (parce que jojo se touche les couilles au lieu de m'ajouter des fonctionnalités)\n")
             .addField("Jeux", "**" + prefix + "puissance4** - Normalement tu sais lire mais au cas où t'ai un QI inférieur à 10, cette commande permet de lancer une partie de Puissance 4"
                             +"\n**" + prefix + "pendu** - Si t’es vraiment con ou conne (pas de sexisme ici) il s'agit du jeu du pendu, le truc ou il faut deviner un mot sinon il y a un Jean-Michel qui meurt\n#RIPJeanMichel"         
                             , false)
-            .addField("Tout savoir sur...", "**" + prefix + "paudrey** - Tout savoir sur notre magnifique Paudrey"
+            .addField("Jeux", "**" + prefix + "paudrey** - Tout savoir sur notre magnifique Paudrey"
                             +"\n**" + prefix + "bot** - Tout savoir sur le bot génial que je suis"
                             +"\n**" + prefix + "lebg** - Tout savoir sur ce BG"
                             , false)               
@@ -149,6 +150,6 @@ bot.on('message', async message => {
     }
 });
 
-bot.login(process.env.TOKEN);
+bot.login(token.token);
 
 console.log("Le bot est allumé");
