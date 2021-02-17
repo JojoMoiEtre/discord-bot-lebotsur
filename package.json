@@ -2,7 +2,7 @@
   "name": "discord-bot-lebotsur",
   "version": "1.0.0",
   "description": "The Best Bot",
-  "main": "src/index.js",
+  "main": "./index.js",
   "scripts": {
     "run": "node index.js"
   },
