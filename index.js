@@ -90,6 +90,6 @@ bot.on('message', async message => {
     }
 });
 
-bot.login(token.process.env.TOKEN);
+bot.login(process.env.TOKEN);
 
 console.log("Le bot est allumé");
