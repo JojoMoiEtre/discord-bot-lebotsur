@@ -23,7 +23,7 @@ bot.on("ready", async () => {
 
 // Blague "hin" "deux" "trois" "soleil"
 bot.on("message", async message => {
-    if(getRandomInt(3) === 1){
+    if(getRandomInt(4) === 1){
         if(message.content.includes("hein") || message.content.includes("Hein") || message.content.includes("HEIN") || message.content.includes("hin") || message.content.includes("Hin") || message.content.includes("HIN")){
             if(message.content.length < 5 || message.content.length < 8 && (message.content.endsWith("!") || message.content.endsWith("?"))){
                 message.channel.send(`Deux`);
@@ -49,7 +49,7 @@ bot.on("message", async message => {
 
 // Blague "ah" "tchoum"
 bot.on("message", async message => {
-    if(getRandomInt(3) === 1){
+    if(getRandomInt(4) === 1){
         if(message.content.includes("ah") || message.content.includes("Ah") || message.content.includes("AH") || message.content.includes("ha") || message.content.includes("Ha") || message.content.includes("HA")){
             if(message.content.length < 3 || message.content.length < 5 && (message.content.endsWith("!") || message.content.endsWith("?"))){
                 message.channel.send(`Tchoum`);
@@ -60,7 +60,7 @@ bot.on("message", async message => {
 
 // Blague "oui" "stisti"
 bot.on("message", async message => {
-    if(getRandomInt(3) === 1){
+    if(getRandomInt(4) === 1){
         if(message.content.includes("oui") || message.content.includes("Oui") || message.content.includes("OUI")){
             if(message.content.length < 4 || message.content.length < 6 && (message.content.endsWith("!") || message.content.endsWith("?"))){
                 message.channel.send(`Stiti`);
