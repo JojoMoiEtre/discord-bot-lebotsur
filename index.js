@@ -36,7 +36,7 @@ bot.on("message", async message => {
             if(((message.content.length < 6) && (message.content.length > 2)) || (message.content.length === 1)){
                 message.channel.send(`Soleil`);
                 setTimeout(() => {
-                    message.channel.send(`<:Heureux:679246188532465673>`);
+                    message.channel.send(`🤡`);
                 }, 1000);
             }
             else {
