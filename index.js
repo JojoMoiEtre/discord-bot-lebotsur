@@ -104,7 +104,7 @@ bot.on('message', async message => {
             .setTitle("Profil - " + user.username)
             .setDescription("Tout savoir sur notre magnifique Paudrey")
             .addField("Nom", user.username, true)
-            .addField("SOUS-nom", "Paudrey", true)
+            .addField("Surnom", "Paudrey", true)
             .addField("Description", "Paudrey est le dictateur de ce serveur de merde. Pourquoi je dis ça ? Parce que monsieur abuse de ses pouvoirs (il mute les gens sans aucune raison juste pour faire chier son monde). Bon après je dit “dictateur” mais en réalité il se fait bully h24 par tout le monde…\nIl a deux objectifs dans la vie : casser les couilles et trouver la motivation (qu’il cherche depuis plusieurs années maintenant)", false)
             .setThumbnail(user.avatarURL(id))
             .setTimestamp();
@@ -116,7 +116,6 @@ bot.on('message', async message => {
 bot.on('message', async message => {
     if (message.content.toLowerCase() === prefix + 'bot') {
         var id = '716339634296062002';
-        const jojoid = bot.users.cache.get('321029072606068736');
         const user = bot.users.cache.get(id);
         const embed = new Discord.MessageEmbed()
             .setColor('#67C334')
@@ -124,7 +123,7 @@ bot.on('message', async message => {
             .setDescription("Tout savoir sur le bot génial que je suis")
             .addField("Nom", user.username, true)
             .addField("Surnom", "Le meilleur des bots", true)
-            .addField("Description", "Je suis le magnifique bot créé par le grand **" + jojoid.username + "**.\nPoli, intelligent et sage je saurais repondre a toutes vos demandes les plus folles (enfin, si Jojo fni de me coder parce qu'en ce moment il en branle pas une ce fils de pute 😡)", false)
+            .addField("Description", "Je suis le magnifique bot créé par un être oubliable.\nPoli, intelligent et sage je saurais repondre à toutes vos demandes les plus folles (enfin si Jojo fni de me coder, parce qu'en ce moment il en branle pas une ce fils de p*te 😡)", false)
             .setThumbnail(user.avatarURL(id))
             .setTimestamp();
         message.channel.send(embed);
@@ -139,9 +138,9 @@ bot.on('message', async message => {
         const embed = new Discord.MessageEmbed()
             .setColor('#8124DA')
             .setTitle("Profil - " + user.username)
-            .setDescription("Tout savoir sur ce BG")
+            .setDescription("Tout savoir sur ce ~~déchet~~ BG")
             .addField("Nom", user.username, true)
-            .addField("Surnom", "Déchet vivant (même pas recyclable)", true)
+            .addField("SOUS-nom", "Déchet vivant (même pas recyclable)", true)
             .addField("Description", "Il est l'intelligence et la beau gossitude incarné...\nNon MDR j’déconne ! T’a cru que j’allais complimenter ce chien de la casse ? Ce gars c’est le plus gros flemmard de tous les temps, il passe toutes ces putains de journées à se toucher les couilles devant son PC. En plus t’a vu sa tronche ? Impossible de pécho avec une gueule pareille !", false)
             .setThumbnail(user.avatarURL(id))
             .setTimestamp();
