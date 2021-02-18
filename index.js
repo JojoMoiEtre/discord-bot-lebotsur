@@ -151,9 +151,9 @@ bot.on('message', async message => {
 //Roll
 bot.on('message', async message => {
     if (message.content.startsWith('<roll ')) {
-        var roll = message.content
+        var roll = Number(message.content)
         const embed = new Discord.MessageEmbed()
-            .setColor('#4cde8g')
+            .setColor('#4c4bvg')
             .setTitle("Roll")
             .setDescription("Je choisi le numéro " + getRandomInt(roll))
             .setTimestamp();
