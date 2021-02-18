@@ -18,7 +18,7 @@ function getRandomInt(max){
 // Statue du bot
 bot.on("ready", async () => {
     bot.user.setStatus("online");
-    bot.user.setActivity("la plèbe " + prefix + "help", {type: 'WATCHING'});
+    bot.user.setActivity("la plèbe (" + prefix + "help)", {type: 'WATCHING'});
 })
 
 // Blague "hin" "deux" "trois" "soleil"
