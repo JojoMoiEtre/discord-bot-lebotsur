@@ -125,7 +125,7 @@ bot.on('message', async message => {
             .setDescription("Tout savoir sur le bot génial que je suis")
             .addField("Nom", user.username, true)
             .addField("Surnom", "Le meilleur des bots", true)
-            .addField("Description", "Je suis le magnifique bot créé par un être oubliable.\nPoli, intelligent et sage je saurais repondre à toutes vos demandes les plus folles (enfin si Jojo fni de me coder, parce qu'en ce moment il en branle pas une ce fils de p*te 😡)", false)
+            .addField("Description", "Je suis le magnifique bot créé par un être oubliable.\nPoli, intelligent et sage je saurais repondre à toutes vos demandes les plus folles (enfin si Jojo fini de me coder, parce qu'en ce moment il en branle pas une ce fils de p*te 😡)", false)
             .setThumbnail(user.avatarURL(id))
             .setTimestamp();
         message.channel.send(embed);
