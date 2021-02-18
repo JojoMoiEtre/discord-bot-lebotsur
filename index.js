@@ -150,8 +150,8 @@ bot.on('message', async message => {
 
 //Roll
 bot.on('message', async message => {
-    if (message.content.startsWith('<roll ')) {
-        var roll = message.content
+    if (message.content.startsWith("<roll ")) {
+        const roll = message.content.substring("<roll ".length)
         const embed = new Discord.MessageEmbed()
             .setColor('#4c4bvg')
             .setTitle("Roll")
