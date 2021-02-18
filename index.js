@@ -148,6 +148,19 @@ bot.on('message', async message => {
     }
 });
 
+//Roll
+bot.on('message', async message => {
+    if (message.content.startsWith('<roll ')) {
+        var roll = message.content
+        const embed = new Discord.MessageEmbed()
+            .setColor('#4cde8g')
+            .setTitle("Roll")
+            .setDescription("Je choisi le numéro " + getRandomInt(roll))
+            .setTimestamp();
+        message.channel.send(embed);
+    }
+});
+
 bot.login(process.env.TOKEN);
 
 console.log("Le bot est allumé");
