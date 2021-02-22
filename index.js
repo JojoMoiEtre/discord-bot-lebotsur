@@ -154,10 +154,11 @@ bot.on('message', async message => {
 bot.on('message', async message => {
     if (message.content.startsWith("<roll ")) {
         const roll = message.content.substring("<roll ".length)
+        var valroll = getRandomInt(Number(roll)) + 1
         const embed = new Discord.MessageEmbed()
             .setColor('#4c4bvg')
             .setTitle("Roll")
-            .setDescription("Je choisi le numéro " + getRandomInt(Number(roll)))
+            .setDescription("Je choisi le numéro " + valroll)
             .setTimestamp();
         message.channel.send(embed);
     }
