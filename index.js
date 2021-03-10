@@ -164,6 +164,23 @@ bot.on('message', async message => {
     }
 });
 
+// Reponse MP
+bot.on('message', async message => {
+    if(message.author.bot) {
+        return;
+    }
+    if(message.channel.type === 'dm') {
+        let tab = [
+            "Désolé je ne réponds pas aux MP :heart:",
+            "Me parle pas stp, je tryhard adibou là",
+            "D'où tu me cause ? T'as vraiment cru que j’allais parler à des gens de ta catégorie sociale ? Je fais partie de la haute société moi, je ne parle pas à la plèbe",
+            "J’ai pas envie de te parler en fait… Donc me parle pas"
+        ]
+        let index = Math.floor(Math.random() * (tab.length))
+        message.channel.send(tab[index])
+    }
+});
+
 bot.login(process.env.TOKEN);
 
 console.log("Le bot est allumé");
