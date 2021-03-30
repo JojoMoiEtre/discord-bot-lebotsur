@@ -143,7 +143,7 @@ bot.on('message', async message => {
             .setDescription("Tout savoir sur ce ~~déchet~~ BG")
             .addField("Nom", user.username, true)
             .addField("SOUS-nom", "Déchet vivant (même pas recyclable)", true)
-            .addField("Description", "Il est l'intelligence et la beau gossitude incarné...\nNon MDR j’déconne ! T’a cru que j’allais complimenter ce chien de la casse ? Ce gars c’est le plus gros flemmard de tous les temps, il passe toutes ces putains de journées à se toucher les couilles devant son PC. En plus t’a vu sa tronche ? Impossible de pécho avec une gueule pareille !", false)
+            .addField("Description", "Il est l'intelligence et la beaugossitude incarné...\nNon MDR j’déconne ! T'as cru que j’allais complimenter ce chien de la casse ? Ce gars c’est le plus gros flemmard de tous les temps, il passe toutes ces putains de journées à se toucher les couilles devant son PC. En plus t’a vu sa tronche ? Impossible de pécho avec une gueule pareille !", false)
             .setThumbnail(user.avatarURL(id))
             .setTimestamp();
         message.channel.send(embed);
