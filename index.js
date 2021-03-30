@@ -89,7 +89,7 @@ bot.on('message', async message => {
                             +"\n**" + prefix + "bot** - Tout savoir sur le bot génial que je suis"
                             +"\n**" + prefix + "lebg** - Tout savoir sur le BG en question"
                             , false)
-            .addField("Utile", "**" + prefix + "roll `nombre`** - Je choisis une valeur entre 0 et le nombre que tu as indiqué (n'oubli pas l’espace champion(ne))"
+            .addField("Utile", "**" + prefix + "roll `nombre`** - Je choisis une valeur entre 0 et le nombre que tu as indiqué"
                             , false)
             .setTimestamp();
         message.channel.send(embed);
