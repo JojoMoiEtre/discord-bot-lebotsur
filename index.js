@@ -106,7 +106,7 @@ bot.on('message', async message => {
             .setTitle("Profil - " + user.username)
             .setDescription("Tout savoir sur notre magnifique Paudrey")
             .addField("Nom", user.username, true)
-            .addField("Surnom", "Paudrey", true)
+            .addField("SOUS-nom", "Paudrey", true)
             .addField("Description", "Paudrey est le dictateur de ce serveur de merde. Pourquoi je dis ça ? Parce que monsieur abuse de ses pouvoirs (il mute les gens sans aucune raison juste pour faire chier son monde). Bon après je dit “dictateur” mais en réalité il se fait bully h24 par tout le monde…\nIl a deux objectifs dans la vie : casser les couilles et trouver la motivation (qu’il cherche depuis plusieurs années maintenant)", false)
             .setThumbnail(user.avatarURL(id))
             .setTimestamp();
