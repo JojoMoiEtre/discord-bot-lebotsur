@@ -39,11 +39,11 @@ bot.on("message", async message => {
                     message.channel.send(`🤡`);
                 }, 1000);
             }
-        }
-        else {
-                blague_123soleil = 1;
-                return;
+            else {
+                    blague_123soleil = 1;
+                    return;
             }
+        }
     }
 })
 
