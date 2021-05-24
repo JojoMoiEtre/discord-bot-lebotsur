@@ -69,7 +69,7 @@ bot.on("message", async message => {
     }
 })
 
-//Jeux
+// Jeux
 bot.on('message', async message => {
     if (message.content.toLowerCase() === prefix + 'puissance4') {
         puissance4.newGame(message);
@@ -96,7 +96,7 @@ bot.on('message', async message => {
     }
 });
 
-//<paudrey
+// <paudrey
 bot.on('message', async message => {
     if (message.content.toLowerCase() === prefix + 'paudrey') {
         var id = '366298754866872331';
@@ -114,7 +114,7 @@ bot.on('message', async message => {
     }
 });
 
-//<bot
+// <bot
 bot.on('message', async message => {
     if (message.content.toLowerCase() === prefix + 'bot') {
         var id = '716339634296062002';
@@ -132,15 +132,15 @@ bot.on('message', async message => {
     }
 });
 
-//<lebg
+// <jojo
 bot.on('message', async message => {
-    if (message.content.toLowerCase() === prefix + 'lebg') {
+    if (message.content.toLowerCase() === prefix + 'jojo') {
         var id = '321029072606068736';
         const user = bot.users.cache.get(id);
         const embed = new Discord.MessageEmbed()
             .setColor('#8124DA')
             .setTitle("Profil - " + user.username)
-            .setDescription("Tout savoir sur ce ~~déchet~~ BG")
+            .setDescription("Tout savoir sur ce ~~BG~~ déchet")
             .addField("Nom", user.username, true)
             .addField("SOUS-nom", "Déchet vivant (même pas recyclable)", true)
             .addField("Description", "Il est l'intelligence et la beaugossitude incarné...\nNon MDR j’déconne ! T'as cru que j’allais complimenter ce chien de la casse ? Ce gars c’est le plus gros flemmard de tous les temps, il passe toutes ces putains de journées à se toucher les couilles devant son PC. En plus t’a vu sa tronche ? Impossible de pécho avec une gueule pareille !", false)
@@ -150,7 +150,7 @@ bot.on('message', async message => {
     }
 });
 
-//Roll
+// Roll
 bot.on('message', async message => {
     if (message.content.startsWith("<roll ")) {
         const roll = message.content.substring("<roll ".length)
