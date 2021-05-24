@@ -2,10 +2,12 @@ const { SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION } = require("constants");
 const Discord = require('discord.js');
 const Puissance4 = require('./Puissance4');
 const Pendu = require('./Pendu');
+const Fast = require('./Fast');
 
 const bot = new Discord.Client();
 const puissance4 = new Puissance4(bot);
 const pendu = new Pendu(bot);
+const fast = new Fast(bot);
 
 var prefix = '<';
 var blague_123soleil = 1;
@@ -69,25 +71,53 @@ bot.on("message", async message => {
     }
 })
 
-// Jeux
+// Jeux - Help
 bot.on('message', async message => {
+    // puissance4
     if (message.content.toLowerCase() === prefix + 'puissance4') {
         puissance4.newGame(message);
     }
+    // pendu
     else if (message.content.toLowerCase() === prefix + 'pendu') {
         pendu.newGame(message);
     }
+    // Fast
+    else if (message.content.startsWith("<fast ")) {
+        const niv = message.content.substring("<fast ".length)
+        if (niv === '1') {
+            fast.newGame(message, niv);
+        }
+        else if (niv === '2') {
+            fast.newGame(message, niv);
+        }
+        else if (niv === '3') {
+            fast.newGame(message, niv);
+        }
+        else if (niv === '4') {
+            fast.newGame(message, niv);
+        }
+        else if (niv === '5') {
+            fast.newGame(message, niv);
+        }
+    }
+    // Help
     else if (message.content.toLowerCase() === prefix + 'help') {
         const embed = new Discord.MessageEmbed()
             .setColor('#fc2eff')
             .setTitle('Help - Commandes')
             .setDescription("Pour le moment je ne sais pas faire grand chose (parce que jojo se touche les couilles au lieu de m'ajouter des fonctionnalités)\n")
-            .addField("Jeux", "**" + prefix + "puissance4** - Normalement tu sais lire mais au cas où t'ai un QI inférieur à 10, cette commande permet de lancer une partie de Puissance 4"
-                            +"\n**" + prefix + "pendu** - Si t’es vraiment con ou conne (pas de sexisme ici) il s'agit du jeu du pendu, le truc ou il faut deviner un mot sinon il y a un Jean-Michel qui meurt\n#RIPJeanMichel"         
+            .addField("Jeux","**" + prefix + "Fast `niveau`** - C'est un jeu où vous devez retaper la chaîne de caractères choisie par le bot le plus rapidement possible"
+                                +"\n*• Niveau **1*** : 15 lettres minuscules"
+                                +"\n*• Niveau **2*** : 15 lettres minuscules ou majuscules"
+                                +"\n*• Niveau **3*** : 15 lettres minuscules (avec ou sans accent), majuscules ou caractères numériques"
+                                +"\n*• Niveau **4*** : 15 lettres minuscules (avec ou sans accent), majuscules, caractères numériques ou spéciaux"
+                                +"\n*• Niveau **5*** : 25 lettres minuscules (avec ou sans accent), majuscules, caractères numériques ou spéciaux"
+                            +"\n**" + prefix + "puissance4** - Normalement tu sais lire mais au cas où t'ai un QI inférieur à 10, cette commande permet de lancer une partie de Puissance 4"
+                            +"\n**" + prefix + "pendu** - Si t’es vraiment con où conne (pas de sexisme ici) il s'agit du jeu du pendu, le truc où il faut deviner un mot sinon il y a un Jean-Michel qui meurt\n#RIPJeanMichel"
                             , false)
-            .addField("Tout savoir sur...", "**" + prefix + "paudrey** - Tout savoir sur notre magnifique Paudrey"
-                            +"\n**" + prefix + "bot** - Tout savoir sur le bot génial que je suis"
-                            +"\n**" + prefix + "lebg** - Tout savoir sur le BG en question"
+            .addField("Tout savoir sur...", "**" + prefix + "bot** - Tout savoir sur le bot génial que je suis"
+                            +"\n**" + prefix + "jojo** - Tout savoir sur sur notre magnifique Jojo"
+                            +"\n**" + prefix + "paudrey** - Tout savoir sur notre magnifique Paudrey"
                             , false)
             .addField("Utile", "**" + prefix + "roll `nombre`** - Je choisis une valeur entre 0 et le nombre que tu as indiqué"
                             , false)
