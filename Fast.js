@@ -69,9 +69,11 @@ class Fast {
                 var mili1 = hrTime[0] * 1000 + hrTime[1] / 1000000;
                 this.time = mili1 - this.time;
                 message.channel.send("Bien joué " + `${collected.first().author}`+ ", tu as réussi en " + this.msToTime(this.time) + " secondes ! :tada:"); 
+                this.inGame = false;
             })
             .catch(collected => {
                 message.channel.send('Temps écoulé !');
+                this.inGame = false;
             });
     }
 
