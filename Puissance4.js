@@ -30,7 +30,7 @@ class Puissance4 {
 
         for (let y = 0; y < HEIGHT; y++) {
             for (let x = 0; x < WIDTH; x++) {
-                gameBoard[y * WIDTH + x] = "⚪";
+                gameBoard[y * WIDTH + x] = "⚫";
             }
         }
 
@@ -90,7 +90,7 @@ class Puissance4 {
 
                 for (let y = HEIGHT - 1; y >= 0; y--) {
                     const chip = gameBoard[column + (y * WIDTH)];
-                    if (chip === "⚪") {
+                    if (chip === "⚫") {
                         gameBoard[column + (y * WIDTH)] = this.getChipFromTurn();
                         placedX = column;
                         placedY = y;
@@ -172,7 +172,7 @@ class Puissance4 {
     isBoardFull() {
         for (let y = 0; y < HEIGHT; y++)
             for (let x = 0; x < WIDTH; x++)
-                if (gameBoard[y * WIDTH + x] === "⚪")
+                if (gameBoard[y * WIDTH + x] === "⚫")
                     return false;
         return true;
     }
