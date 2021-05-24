@@ -112,8 +112,8 @@ bot.on('message', async message => {
                                 +"\n*• Niveau **3*** : 15 lettres minuscules (avec ou sans accent), majuscules ou caractères numériques"
                                 +"\n*• Niveau **4*** : 15 lettres minuscules (avec ou sans accent), majuscules, caractères numériques ou spéciaux"
                                 +"\n*• Niveau **5*** : 25 lettres minuscules (avec ou sans accent), majuscules, caractères numériques ou spéciaux"
-                            +"\n**" + prefix + "puissance4** - Normalement tu sais lire mais au cas où t'ai un QI inférieur à 10, cette commande permet de lancer une partie de Puissance 4"
                             +"\n**" + prefix + "pendu** - Si t’es vraiment con où conne (pas de sexisme ici) il s'agit du jeu du pendu, le truc où il faut deviner un mot sinon il y a un Jean-Michel qui meurt\n#RIPJeanMichel"
+                            +"\n**" + prefix + "puissance4** - Normalement tu sais lire mais au cas où t'ai un QI inférieur à 10, cette commande permet de lancer une partie de Puissance 4"
                             , false)
             .addField("Tout savoir sur...", "**" + prefix + "bot** - Tout savoir sur le bot génial que je suis"
                             +"\n**" + prefix + "jojo** - Tout savoir sur sur notre magnifique Jojo"
