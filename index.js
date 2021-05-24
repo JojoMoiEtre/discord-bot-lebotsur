@@ -106,7 +106,7 @@ bot.on('message', async message => {
             .setColor('#fc2eff')
             .setTitle('Help - Commandes')
             .setDescription("Pour le moment je ne sais pas faire grand chose (parce que jojo se touche les couilles au lieu de m'ajouter des fonctionnalités)\n")
-            .addField("Jeux","**" + prefix + "Fast `niveau`** - C'est un jeu où vous devez retaper la chaîne de caractères choisie par le bot le plus rapidement possible"
+            .addField("Jeux","**" + prefix + "Fast `niveau`** - C'est un jeu où vous devez retaper la chaîne de caractères choisie par mes soins le plus rapidement possible"
                                 +"\n*• Niveau **1*** : 15 lettres minuscules"
                                 +"\n*• Niveau **2*** : 15 lettres minuscules ou majuscules"
                                 +"\n*• Niveau **3*** : 15 lettres minuscules (avec ou sans accent), majuscules ou caractères numériques"
