@@ -176,7 +176,7 @@ bot.on('message', async message => {
         const embed = new Discord.MessageEmbed()
             .setColor('#4c4bvg')
             .setTitle("Roll")
-            .setDescription("Je choisi le numéro " + valroll)
+            .setDescription("Je choisis le numéro " + valroll)
             .setTimestamp();
         message.channel.send(embed);
     }
