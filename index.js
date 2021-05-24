@@ -74,12 +74,12 @@ bot.on("message", async message => {
 })
 
 // Jeux - Help
-bot.on('message', async message => {
-    // puissance4
+bot.on("message", async message => {
+    // Puissance4
     if (message.content.toLowerCase() === prefix + 'puissance4') {
         puissance4.newGame(message);
     }
-    // pendu
+    // Pendu
     else if (message.content.toLowerCase() === prefix + 'pendu') {
         pendu.newGame(message);
     }
