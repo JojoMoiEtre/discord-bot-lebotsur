@@ -4,12 +4,14 @@ const Puissance4 = require('./Puissance4');
 const Pendu = require('./Pendu');
 const Fast = require('./Fast');
 const Help = require('./Help');
+const Avatar = require('./Avatar');
 
 const bot = new Discord.Client();
 const puissance4 = new Puissance4(bot);
 const pendu = new Pendu(bot);
 const fast = new Fast(bot);
 const help = new Help(bot);
+const avatar = new Avatar(bot);
 
 var prefix = '<';
 var blague_123soleil = 1;
@@ -114,6 +116,25 @@ bot.on("message", async message => {
     }
 });
 
+// <avatar
+bot.on('message', async message => {
+    if (!message.guild || message.author.bot) {
+        return
+    }
+    if (message.content.toLowerCase() === `${prefix}avatar`) {
+        avatar.run(message, message.author);
+        return;
+    }
+    else if (message.content.startsWith(`${prefix}avatar `)) {
+        const member = message.mentions.users.first() || message.author
+        if (member !== message.author) {
+            avatar.run(message, message.mentions.users.first())
+            return;
+        }
+        message.channel.send("Vous devez mentionner une personne existante pour obtenir son avatar...");
+    }
+});
+
 // <paudrey
 bot.on('message', async message => {
     if (message.content.toLowerCase() === prefix + 'paudrey') {
@@ -170,13 +191,13 @@ bot.on('message', async message => {
 
 // Roll
 bot.on('message', async message => {
-    if (message.content.startsWith("<roll ")) {
-        const roll = message.content.substring("<roll ".length)
+    if (message.content.startsWith(`${prefix}roll `)) {
+        const roll = message.content.substring(`${prefix}roll `.length)
         var valroll = getRandomInt(Number(roll)) + 1
         const embed = new Discord.MessageEmbed()
-            .setColor('#4c4bvg')
+            .setColor('#278C37')
             .setTitle("Roll")
-            .setDescription("Je choisis le numéro " + valroll)
+            .setDescription("Je choisis le numéro **" + valroll + "**")
             .setTimestamp();
         message.channel.send(embed);
     }
@@ -192,7 +213,7 @@ bot.on('message', async message => {
             "Désolé je ne réponds pas aux MP :heart:",
             "Me parle pas stp, je tryhard adibou là",
             "D'où tu me cause ? T'as vraiment cru que j’allais parler à des gens de ta catégorie sociale ? Je fais partie de la haute société moi, je ne parle pas à la plèbe",
-            "J’ai pas envie de te parler en fait… Donc me parle pas"
+            "J’ai pas envie de te parler en fait…"
         ]
         let index = Math.floor(Math.random() * (tab.length))
         message.channel.send(tab[index])
