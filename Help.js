@@ -18,7 +18,7 @@ class Help {
                 .setColor('#fc2eff')
                 .setTitle('Help - Commandes')
                 .setDescription("Vous pouvez naviguez de page en page avec les réactions ci-dessous")
-                .addField("Jeux","**" + prefix + "Fast `niveau`** - C'est un jeu où vous devez retaper la chaîne de caractères choisie par mes soins le plus rapidement possible"
+                .addField("Jeux","**" + prefix + "fast `niveau`** - C'est un jeu où vous devez retaper la chaîne de caractères choisie par mes soins le plus rapidement possible"
                                 +"\n*• Niveau **1*** : 15 lettres minuscules"
                                 +"\n*• Niveau **2*** : 15 lettres minuscules ou majuscules"
                                 +"\n*• Niveau **3*** : 15 lettres minuscules (avec ou sans accent), majuscules ou caractères numériques"
