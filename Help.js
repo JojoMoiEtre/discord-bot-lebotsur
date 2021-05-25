@@ -16,7 +16,7 @@ class Help {
                 name: "Help",
                 content: new MessageEmbed()
                 .setColor('#fc2eff')
-                .setTitle('Help - Commandes')
+                .setTitle('Help - Commandes')   //JEUX
                 .setDescription("Vous pouvez naviguez de page en page avec les réactions ci-dessous")
                 .addField("Jeux","**" + prefix + "fast `niveau`** - C'est un jeu où vous devez retaper la chaîne de caractères choisie par mes soins le plus rapidement possible"
                                 +"\n*• Niveau **1*** : 15 lettres minuscules"
@@ -37,13 +37,14 @@ class Help {
             {
                 content: new MessageEmbed()
                 .setColor('#fc2eff')
-                .setTitle('Help - Commandes')
+                .setTitle('Help - Commandes')   //TOUT SAVOIR SUR... - UTILITAIRE
                 .setDescription("Vous pouvez naviguez de page en page avec les réactions ci-dessous")
                 .addField("Tout savoir sur...", "**" + prefix + "bot** - Tout savoir sur le bot génial que je suis"
                                 +"\n**" + prefix + "jojo** - Tout savoir sur sur notre magnifique Jojo"
                                 +"\n**" + prefix + "paudrey** - Tout savoir sur notre magnifique Paudrey"
                                 , false)
-                .addField("Utile", "**" + prefix + "roll `nombre`** - Je choisis une valeur entre 0 et le nombre que tu as indiqué"
+                .addField("Utilitaire", "**" + prefix + "avatar `@quelqu'un`** - Je t'envois ta photo de profil (ou celle de l'utilisateur mentionné)"
+                                +"\n**" + prefix + "roll `nombre`** - Je choisis une valeur entre 0 et le nombre que tu as indiqué"
                                 , false)
                 .setFooter('Page 2/2'),
                 reactions: {
