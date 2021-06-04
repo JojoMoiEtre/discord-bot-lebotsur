@@ -1,6 +1,5 @@
 const { SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION } = require("constants");
 const Discord = require('discord.js');
-const config = require("./config.json");
 const Puissance4 = require('./commands/Puissance4');
 const Pendu = require('./commands/Pendu');
 const Fast = require('./commands/Fast');
@@ -215,6 +214,6 @@ bot.on("message", async message => {
     };
 });
 
-bot.login(config.token);
+bot.login(token);
 
 console.log("Le bot est allumé");
