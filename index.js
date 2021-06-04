@@ -214,6 +214,6 @@ bot.on("message", async message => {
     };
 });
 
-bot.login(token);
+bot.login(TOKEN);
 
 console.log("Le bot est allumé");
