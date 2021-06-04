@@ -4,6 +4,7 @@ const {MessageEmbed} = require('discord.js');
 const {Menu} = require('discord.js-menu');
 
 var prefix = '<';
+var pageMax = 3;
 
 class Help {
     constructor() {
@@ -14,6 +15,22 @@ class Help {
         let menu = new Menu(message.channel, message.author.id, [
             {
                 name: "Help",
+                content: new MessageEmbed()
+                .setColor('#fc2eff')
+                .setTitle('Help - Mise à jour du 04/06/2021')
+                .setDescription("Vous pouvez naviguez de page en page avec les réactions ci-dessous")
+                .addField("News","• Ajout de la commande **" + prefix + "avatar `@quelqu'un`**"
+                            + "\n• Modification du menu **" + prefix + "help** (Il est maintenant possible de naviguer entre les différentes catégories)"
+                            + "\n• Ajout de 2 niveaux de difficulté (*Niveau #* et *Niveau ##*) pour le jeu **" + prefix + "fast**"
+                            + "\n• Modification visuel mineur du jeu **" + prefix + "fast**"
+                            + "\n• Modification visuel mineur du jeu **" + prefix + "pendu**"
+                            , false)
+                .setFooter('Page 1/' + pageMax),
+                reactions: {
+                    "▶️": "next",
+                }
+            },
+            {
                 content: new MessageEmbed()
                 .setColor('#fc2eff')
                 .setTitle('Help - Commandes')
@@ -29,8 +46,9 @@ class Help {
                             +"\n**" + prefix + "pendu** - Si t’es vraiment con où conne (pas de sexisme ici) il s'agit du jeu du pendu, le truc où il faut deviner un mot sinon il y a un Jean-Michel qui meurt\n#RIPJeanMichel"
                             +"\n**" + prefix + "puissance4** - Normalement tu sais lire mais au cas où t'ai un QI inférieur à 10, cette commande permet de lancer une partie de Puissance 4"
                             , false)
-                .setFooter('Page 1/2'),
+                .setFooter('Page 2/' + pageMax),
                 reactions: {
+                    "◀️": "previous",
                     "▶️": "next",
                 }
             },
@@ -46,7 +64,7 @@ class Help {
                 .addField("Utile", "**" + prefix + "avatar `@quelqu'un`** - Je t'envois ta photo de profil (ou celle de l'utilisateur mentionné)"
                                 +"\n**" + prefix + "roll `nombre`** - Je choisis une valeur entre 0 et le nombre que tu as indiqué"
                                 , false)
-                .setFooter('Page 2/2'),
+                .setFooter('Page 3/' + pageMax),
                 reactions: {
                     "◀️": "previous",
                 }
