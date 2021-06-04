@@ -1,10 +1,11 @@
 const { SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION } = require("constants");
 const Discord = require('discord.js');
-const Puissance4 = require('./Puissance4');
-const Pendu = require('./Pendu');
-const Fast = require('./Fast');
-const Help = require('./Help');
-const Avatar = require('./Avatar');
+const config = require("./config.json");
+const Puissance4 = require('./commands/Puissance4');
+const Pendu = require('./commands/Pendu');
+const Fast = require('./commands/Fast');
+const Help = require('./commands/Help');
+const Avatar = require('./commands/Avatar');
 
 const bot = new Discord.Client();
 const puissance4 = new Puissance4(bot);
@@ -14,9 +15,39 @@ const help = new Help(bot);
 const avatar = new Avatar(bot);
 
 var prefix = '<';
-var blague_123soleil = 1;
+var blague_123soleil = false;
 
-// Lancer aléatoire
+let dm = [
+    "Désolé je ne réponds pas aux MP :heart:",
+    "Me parle pas stp, je tryhard adibou là",
+    "D'où tu me cause ? T'as vraiment cru que j’allais parler à des gens de ta catégorie sociale ? Je fais partie de la haute société moi, je ne parle pas à la plèbe",
+    "J’ai pas envie de te parler en fait…"
+]
+
+let possible_ah = [
+    "ah", "Ah", "aH", "AH", "ah !", "ah ?", "Ah !", "Ah ?", "aH !", "aH ?", "AH !", "AH ?", 
+    "ha", "Ha", "hA", "HA", "ha !", "ha ?", "Ha !", "Ha ?", "hA !", "hA ?", "HA !", "HA ?"
+];
+
+let possible_oui = [
+    "oui", "Oui", "OUI", "ui", "Ui", "UI", "oui !", "Oui !", "OUI !", "ui !", "Ui !", "UI !",
+    "oui ?", "Oui ?", "OUI ?", "ui ?", "Ui ?", "UI ?", "oui...", "Oui...", "OUI...", "ui...", "Ui...", "UI...",
+    "oui -_-", "Oui -_-", "OUI -_-", "ui -_-", "Ui -_-", "UI -_-"
+];
+
+let possible_hin = [
+    "hin", "Hin", "HIN", "hein", "Hein", "HEIN",
+    "hin !", "Hin !", "HIN !", "hein !", "Hein !", "HEIN !",
+    "hin ?", "Hin ?", "HIN ?", "hein ?", "Hein ?", "HEIN ?"
+];
+
+let possible_trois = [
+    "trois", "Trois", "TROIS", "troi", "Troi", "TROI", "3",
+    "trois !", "Trois !", "TROIS !", "troi !", "Troi !", "TROI !", "3 !",
+    "trois ?", "Trois ?", "TROIS ?", "troi ?", "Troi ?", "TROI ?", "3 ?",
+];
+
+// getRandomInt
 function getRandomInt(max){
     return Math.floor(Math.random() * Math.floor(max));
 }
@@ -27,56 +58,44 @@ bot.on("ready", async () => {
     bot.user.setActivity("la plèbe (" + prefix + "help)", {type: 'WATCHING'});
 })
 
-// Blague "hin" "deux" "trois" "soleil"
 bot.on("message", async message => {
-    if(getRandomInt(10) === 1){
-        if(message.content.includes("hein") || message.content.includes("Hein") || message.content.includes("HEIN") || message.content.includes("hin") || message.content.includes("Hin") || message.content.includes("HIN")){
-            if(message.content.length < 5 || message.content.length < 8 && (message.content.endsWith("!") || message.content.endsWith("?"))){
-                message.channel.send(`Deux`);
-                blague_123soleil = 2;
-            }
-        }
-    }
-    if(blague_123soleil === 2){
-        if(message.content.includes("trois") || message.content.includes("Trois") || message.content.includes("TROIS") || message.content.includes("3") || message.content.includes("troi") || message.content.includes("Troi") || message.content.includes("TROI")){
-            if(((message.content.length < 6) && (message.content.length > 2)) || (message.content.length === 1)){
-                message.channel.send(`Soleil`);
-                setTimeout(() => {
-                    message.channel.send(`🤡`);
-                }, 1000);
-            }
-            else {
-                    blague_123soleil = 1;
-                    return;
-            }
-        }
-    }
-})
 
-// Blague "ah" "tchoum"
-bot.on("message", async message => {
-    if(getRandomInt(10) === 1){
-        if(message.content.includes("ah") || message.content.includes("Ah") || message.content.includes("AH") || message.content.includes("ha") || message.content.includes("Ha") || message.content.includes("HA")){
-            if(message.content.length < 3 || message.content.length < 5 && (message.content.endsWith("!") || message.content.endsWith("?"))){
-                message.channel.send(`Tchoum`);
-            }
+    if (message.author.bot) {
+        return;
+    };
+
+    // Blague "ah" "tchoum"
+    if(possible_ah.indexOf(message.content.toLowerCase()) !== -1) {
+        if(getRandomInt(10) === 2) {
+            message.channel.send(`Tchoum`);
+        }
+    };
+    
+    // Blague "oui" "stisti"
+    if(possible_oui.indexOf(message.content.toLowerCase()) !== -1) {
+        if(getRandomInt(10) === 2) {
+            message.channel.send(`Stiti`);
+        }
+    };
+
+    // Blague "hin" "deux" "trois" "soleil"
+    if(possible_hin.indexOf(message.content.toLowerCase()) !== -1) {
+        if(getRandomInt(10) === 2) {
+            message.channel.send(`Deux`);
+            blague_123soleil = true;
         }
     }
-})
-
-// Blague "oui" "stisti"
-bot.on("message", async message => {
-    if(getRandomInt(10) === 1){
-        if(message.content.includes("oui") || message.content.includes("Oui") || message.content.includes("OUI")){
-            if(message.content.length < 4 || message.content.length < 6 && (message.content.endsWith("!") || message.content.endsWith("?"))){
-                message.channel.send(`Stiti`);
-            }
-        }
+    else if((possible_trois.indexOf(message.content.toLowerCase()) !== -1) && (blague_123soleil === true)) {
+        message.channel.send(`Soleil`);
+        setTimeout(() => {
+            message.channel.send(`🤡`);
+        }, 1000);
+        blague_123soleil = false;
     }
-})
+    else {
+        blague_123soleil = false;
+    };
 
-// Jeux - Help
-bot.on("message", async message => {
     // Puissance4
     if (message.content.toLowerCase() === prefix + 'puissance4') {
         puissance4.newGame(message);
@@ -86,8 +105,8 @@ bot.on("message", async message => {
         pendu.newGame(message);
     }
     // Fast
-    else if (message.content.startsWith("<fast ")) {
-        const niv = message.content.substring("<fast ".length)
+    else if (message.content.startsWith(`${prefix}fast`)) {
+        const niv = message.content.substring(`${prefix}fast `.length)
         if (niv === '1') {
             fast.newGame(message, niv);
         }
@@ -113,14 +132,9 @@ bot.on("message", async message => {
     // Help
     else if (message.content.toLowerCase() === prefix + 'help') {
         help.execute(message);
-    }
-});
+    };
 
-// <avatar
-bot.on('message', async message => {
-    if (!message.guild || message.author.bot) {
-        return
-    }
+    // <avatar
     if (message.content.toLowerCase() === `${prefix}avatar`) {
         avatar.run(message, message.author);
         return;
@@ -132,16 +146,14 @@ bot.on('message', async message => {
             return;
         }
         message.channel.send("Vous devez mentionner une personne existante pour obtenir son avatar...");
-    }
-});
+    };
 
-// <paudrey
-bot.on('message', async message => {
+    // <paudrey
     if (message.content.toLowerCase() === prefix + 'paudrey') {
         var id = '366298754866872331';
         const user = bot.users.cache.get(id);
         const embed = new Discord.MessageEmbed()
-            .setColor('#275BF0')
+            .setColor('RANDOM')
             .setTitle("Profil - " + user.username)
             .setDescription("Tout savoir sur notre magnifique Paudrey")
             .addField("Nom", user.username, true)
@@ -150,16 +162,14 @@ bot.on('message', async message => {
             .setThumbnail(user.avatarURL(id))
             .setTimestamp();
         message.channel.send(embed);
-    }
-});
+    };
 
-// <bot
-bot.on('message', async message => {
+    // <bot
     if (message.content.toLowerCase() === prefix + 'bot') {
         var id = '716339634296062002';
         const user = bot.users.cache.get(id);
         const embed = new Discord.MessageEmbed()
-            .setColor('#67C334')
+            .setColor('RANDOM')
             .setTitle("Profil - " + user.username)
             .setDescription("Tout savoir sur le bot génial que je suis")
             .addField("Nom", user.username, true)
@@ -168,16 +178,14 @@ bot.on('message', async message => {
             .setThumbnail(user.avatarURL(id))
             .setTimestamp();
         message.channel.send(embed);
-    }
-});
+    };
 
-// <jojo
-bot.on('message', async message => {
+    // <jojo
     if (message.content.toLowerCase() === prefix + 'jojo') {
         var id = '321029072606068736';
         const user = bot.users.cache.get(id);
         const embed = new Discord.MessageEmbed()
-            .setColor('#8124DA')
+            .setColor('RANDOM')
             .setTitle("Profil - " + user.username)
             .setDescription("Tout savoir sur ce ~~BG~~ déchet")
             .addField("Nom", user.username, true)
@@ -186,11 +194,9 @@ bot.on('message', async message => {
             .setThumbnail(user.avatarURL(id))
             .setTimestamp();
         message.channel.send(embed);
-    }
-});
+    };
 
-// Roll
-bot.on('message', async message => {
+    // Roll
     if (message.content.startsWith(`${prefix}roll `)) {
         const roll = message.content.substring(`${prefix}roll `.length)
         var valroll = getRandomInt(Number(roll)) + 1
@@ -200,26 +206,15 @@ bot.on('message', async message => {
             .setDescription("Je choisis le numéro **" + valroll + "**")
             .setTimestamp();
         message.channel.send(embed);
-    }
-});
+    };
 
-// Reponse MP
-bot.on('message', async message => {
-    if(message.author.bot) {
-        return;
-    }
+    // Reponse MP
     if(message.channel.type === 'dm') {
-        let tab = [
-            "Désolé je ne réponds pas aux MP :heart:",
-            "Me parle pas stp, je tryhard adibou là",
-            "D'où tu me cause ? T'as vraiment cru que j’allais parler à des gens de ta catégorie sociale ? Je fais partie de la haute société moi, je ne parle pas à la plèbe",
-            "J’ai pas envie de te parler en fait…"
-        ]
-        let index = Math.floor(Math.random() * (tab.length))
-        message.channel.send(tab[index])
-    }
+        let index = Math.floor(Math.random() * (dm.length))
+        message.channel.send(dm[index])
+    };
 });
 
-bot.login(process.env.TOKEN);
+bot.login(config.token);
 
 console.log("Le bot est allumé");
