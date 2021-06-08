@@ -9,7 +9,7 @@ class Anniv {
             if(personne.includes("716339634296062002")) {
                 personne = personne + "*(Ui c mwa)*"
             }
-            bot.channels.cache.get('776947747604529195').send("Hey @everyone ! Aujourd'hui est un jour spécial ! Pourquoi ? Parce que c’est l’anniversaire de "+personne+" :partying_face: :tada: \n*(C’est le moment parfait pour lui dire que c’est déjà un fossile ^^)*")
+            bot.channels.cache.get('693534316562743307').send("Hey @everyone ! Aujourd'hui est un jour spécial ! Pourquoi ? Parce que c’est l’anniversaire de "+personne+" :partying_face: :tada: \n*(C’est le moment parfait pour lui dire que c’est déjà un fossile ^^)*")
         }
         if(req.length > 1) {
             for(var i = 1 ; i < req.length ; i++) {
@@ -23,7 +23,7 @@ class Anniv {
                     personne = personne + "*(Ui c mwa)*"
                 }
             }
-            bot.channels.cache.get('776947747604529195').send("Hey @everyone ! Aujourd'hui est un jour spécial ! Pourquoi ? Parce que c’est l’anniversaire de "+personne+" :partying_face: :tada: \n*(C’est le moment parfait pour leur dire que ce sont déjà des fossiles)*")
+            bot.channels.cache.get('693534316562743307').send("Hey @everyone ! Aujourd'hui est un jour spécial ! Pourquoi ? Parce que c’est l’anniversaire de "+personne+" :partying_face: :tada: \n*(C’est le moment parfait pour leur dire que ce sont déjà des fossiles)*")
         }
     }
 
