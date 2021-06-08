@@ -145,7 +145,7 @@ bot.on("message", async message => {
     // Anniv
     if(message.content.startsWith(`${prefix}anniv`)) {
         const dateAnnivFull = message.content.substring(`${prefix}anniv `.length)
-        if((dateAnnivFull[2] !== "/" && dateAnnivFull[5] !== "/") || dateAnnivFull.length < 10 || dateAnnivFull[0] > 3 || dateAnnivFull[3] > 1) {
+        if((dateAnnivFull[2] !== "/" && dateAnnivFull[5] !== "/") || dateAnnivFull.length !== 10 || dateAnnivFull[0] > 3 || dateAnnivFull[3] > 1) {
             message.channel.send("Tu dois inscrire ta date de naissance sous la forme : JJ/MM/AAAA")
         }
         else  {
