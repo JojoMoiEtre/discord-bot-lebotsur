@@ -17,13 +17,14 @@ class Help {
                 name: "Help",
                 content: new MessageEmbed()
                 .setColor('#fc2eff')
-                .setTitle('Help - Mise à jour du 04/06/2021')
+                .setTitle('Help - Mise à jour le 08/06/2021')
                 .setDescription("Vous pouvez naviguez de page en page avec les réactions ci-dessous")
-                .addField("News","• Ajout de la commande **" + prefix + "avatar `@quelqu'un`**"
-                            + "\n• Modification du menu **" + prefix + "help** (Il est maintenant possible de naviguer entre les différentes catégories)"
-                            + "\n• Ajout de 2 niveaux de difficulté (*Niveau #* et *Niveau ##*) pour le jeu **" + prefix + "fast**"
-                            + "\n• Modification visuel mineur du jeu **" + prefix + "fast**"
-                            + "\n• Modification visuel mineur du jeu **" + prefix + "pendu**"
+                .addField("News", "• Ajout de la commande **" + prefix + "anniv `JJ/MM/AAAA`** - (08/06/2021)"
+                            +"\n• Ajout de la commande **" + prefix + "avatar `@quelqu'un`** - (04/06/2021)"
+                            +"\n• Modification du menu **" + prefix + "help** (Il est maintenant possible de naviguer entre les différentes catégories) - (04/06/2021)"
+                            +"\n• Ajout de 2 niveaux de difficulté (*Niveau #* et *Niveau ##*) pour le jeu **" + prefix + "fast** - (04/06/2021)"
+                            +"\n• Modification visuel mineur du jeu **" + prefix + "fast** - (04/06/2021)"
+                            +"\n• Modification visuel mineur du jeu **" + prefix + "pendu** - (04/06/2021)"
                             , false)
                 .setFooter('Page 1/' + pageMax),
                 reactions: {
@@ -61,7 +62,8 @@ class Help {
                                 +"\n**" + prefix + "jojo** - Tout savoir sur sur notre magnifique Jojo"
                                 +"\n**" + prefix + "paudrey** - Tout savoir sur notre magnifique Paudrey"
                                 , false)
-                .addField("Utile", "**" + prefix + "avatar `@quelqu'un`** - Je t'envois ta photo de profil (ou celle de l'utilisateur mentionné)"
+                .addField("Utile", "**" + prefix + "anniv `JJ/MM/AAAA`** - Je note ta date de naissance pour pouvoir te rappeler que tu auras vieilli le moment venu ^^"
+                                +"\n**" + prefix + "avatar `@quelqu'un`** - Je t'envois ta photo de profil (ou celle de l'utilisateur mentionné)"
                                 +"\n**" + prefix + "roll `nombre`** - Je choisis une valeur entre 0 et le nombre que tu as indiqué"
                                 , false)
                 .setFooter('Page 3/' + pageMax),
