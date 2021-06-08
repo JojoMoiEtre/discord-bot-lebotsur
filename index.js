@@ -7,6 +7,7 @@ const Pendu = require('./commands/Pendu');
 const Fast = require('./commands/Fast');
 const Help = require('./commands/Help');
 const Avatar = require('./commands/Avatar');
+const Anniv = require("./commands/Anniv");
 
 const bot = new Discord.Client();
 const puissance4 = new Puissance4(bot);
