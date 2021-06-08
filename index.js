@@ -1,5 +1,7 @@
 const { SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION } = require("constants");
 const Discord = require('discord.js');
+const split = require ('split');
+const mysql = require('mysql');
 const Puissance4 = require('./commands/Puissance4');
 const Pendu = require('./commands/Pendu');
 const Fast = require('./commands/Fast');
@@ -12,6 +14,7 @@ const pendu = new Pendu(bot);
 const fast = new Fast(bot);
 const help = new Help(bot);
 const avatar = new Avatar(bot);
+const anniv = new Anniv(bot);
 
 var prefix = '<';
 var blague_123soleil = false;
@@ -46,16 +49,59 @@ let possible_trois = [
     "trois ?", "Trois ?", "TROIS ?", "troi ?", "Troi ?", "TROI ?", "3 ?",
 ];
 
+const db = new mysql.createConnection({
+    host: "sql4.freesqldatabase.com",
+    password: "qUj26t3uCu",
+    user: "sql4417791",
+    database: "sql4417791"
+})
+
+db.connect(function (err) {
+    if(err) throw err;
+    console.log('Connection reussi')
+});
+
 // getRandomInt
 function getRandomInt(max){
     return Math.floor(Math.random() * Math.floor(max));
+}
+
+// dateDuJour
+function dateDuJour() {
+    const date = new Date();
+    var jour = date.getDate();
+    var mois = date.getMonth()+1;
+    if (jour < 10) jour = '0'+jour;
+    if (mois < 10) mois = '0'+mois;
+    return (jour+"/"+(mois));
 }
 
 // Statue du bot
 bot.on("ready", async () => {
     bot.user.setStatus("online");
     bot.user.setActivity("la plèbe (" + prefix + "help)", {type: 'WATCHING'});
-})
+    
+    setInterval(() => {
+        const date = new Date();
+        var dateJour = dateDuJour();
+        var heure = date.getHours();
+        var minutes = date.getMinutes();
+        if(heure === 0) {
+            if(minutes === 0) {
+                db.query(`SELECT * FROM user WHERE DateJourMois = '${dateJour}'`, async (err, req) => {
+                    if(err) throw err;
+                    if(req.length > 0) {
+                        anniv.joyAnniv(bot, req);
+                    }
+                })
+            }
+        }
+    }, 60000)
+});
+
+bot.on("guildMemberRemove", async member => {
+    db.query(`DELETE FROM user WHERE ID = ${member.id}`);
+});
 
 bot.on("message", async message => {
 
@@ -94,6 +140,17 @@ bot.on("message", async message => {
     else {
         blague_123soleil = false;
     };
+    
+    // Anniv
+    if(message.content.startsWith(`${prefix}anniv`)) {
+        const dateAnnivFull = message.content.substring(`${prefix}anniv `.length)
+        if((dateAnnivFull[2] !== "/" && dateAnnivFull[5] !== "/") || dateAnnivFull.length < 10 || dateAnnivFull[0] > 3 || dateAnnivFull[3] > 1) {
+            message.channel.send("Tu dois inscrire ta date de naissance sous la forme : JJ/MM/AAAA")
+        }
+        else  {
+            anniv.annivAdd(message, dateAnnivFull, db);
+        }
+    }
 
     // Puissance4
     if (message.content.toLowerCase() === prefix + 'puissance4') {
