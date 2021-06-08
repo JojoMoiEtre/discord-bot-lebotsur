@@ -23,7 +23,7 @@ class Anniv {
                     personne = personne + "*(Ui c mwa)*"
                 }
             }
-            bot.channels.cache.get('693534316562743307').send("Hey @everyone ! Aujourd'hui est un jour spécial ! Pourquoi ? Parce que c’est l’anniversaire de "+personne+" :partying_face: :tada: \n*(C’est le moment parfait pour leur dire que ce sont déjà des fossiles)*")
+            bot.channels.cache.get('693534316562743307').send("Hey @everyone ! Aujourd'hui est un jour spécial ! Pourquoi ? Parce que c’est l’anniversaire de "+personne+" :partying_face: :tada: \n*(C’est le moment parfait pour leur dire que ce sont déjà des fossiles ^^)*")
         }
     }
 
