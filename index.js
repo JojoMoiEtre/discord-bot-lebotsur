@@ -81,6 +81,7 @@ function dateDuJour() {
 bot.on("ready", async () => {
     bot.user.setStatus("online");
     bot.user.setActivity("la plèbe (" + prefix + "help)", {type: 'WATCHING'});
+    console.log(dateDuJour());
     
     setInterval(() => {
         const date = new Date();
