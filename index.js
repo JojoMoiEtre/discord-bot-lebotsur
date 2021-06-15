@@ -51,10 +51,10 @@ let possible_trois = [
 ];
 
 const db = new mysql.createConnection({
-    host: "sql4.freesqldatabase.com",
-    password: "qUj26t3uCu",
-    user: "sql4417791",
-    database: "sql4417791"
+    host: "bmniqqpepppmdkmrvbrr-mysql.services.clever-cloud.com",
+    password: "G32BT7u20JvcM0oDC98e",
+    user: "uq0wcrb3hufidsi9",
+    database: "bmniqqpepppmdkmrvbrr"
 })
 
 db.connect(function (err) {
