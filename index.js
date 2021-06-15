@@ -49,26 +49,23 @@ let possible_trois = [
     "trois !", "Trois !", "TROIS !", "troi !", "Troi !", "TROI !", "3 !",
     "trois ?", "Trois ?", "TROIS ?", "troi ?", "Troi ?", "TROI ?", "3 ?",
 ];
-
-const db = new mysql.createConnection({
+const db = new mysql.createPool({
     host: "bmniqqpepppmdkmrvbrr-mysql.services.clever-cloud.com",
     port:"3306",
     database: "bmniqqpepppmdkmrvbrr",
     user: "uq0wcrb3hufidsi9",
     password: "G32BT7u20JvcM0oDC98e"
-})
+});
 
-db.connect(function (err) {
+/*db.connect(function (err) {
     if(err) throw err;
     console.log('Connection reussi')
-});
+});*/
 
 db.on('error', err => {
     if (err.code === 'PROTOCOL_CONNECTION_LOST') {
-        db.connect(function (err) {
-            if(err) throw err;
-            console.log('Connection reussi')
-        });
+        // db error reconnect
+        disconnect_handler();
     } 
     else {
         throw err;
