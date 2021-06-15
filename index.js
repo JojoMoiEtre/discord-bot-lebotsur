@@ -65,8 +65,10 @@ db.connect(function (err) {
 
 db.on('error', err => {
     if (err.code === 'PROTOCOL_CONNECTION_LOST') {
-        // db error reconnect
-        disconnect_handler();
+        db.connect(function (err) {
+            if(err) throw err;
+            console.log('Connection reussi')
+        });
     } 
     else {
         throw err;
