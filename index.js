@@ -98,7 +98,7 @@ bot.on("ready", async () => {
         var dateJour = dateDuJour();
         var heure = date.getHours();
         var minutes = date.getMinutes();
-        if(heure === 6) {
+        if(heure === 4) {
             if(minutes === 0) {
                 db.query(`SELECT * FROM user WHERE DateJourMois = '${dateJour}'`, async (err, req) => {
                     if(err) throw err;
