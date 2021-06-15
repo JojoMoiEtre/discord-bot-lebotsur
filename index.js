@@ -57,21 +57,6 @@ const db = new mysql.createPool({
     password: "G32BT7u20JvcM0oDC98e"
 });
 
-/*db.connect(function (err) {
-    if(err) throw err;
-    console.log('Connection reussi')
-});*/
-
-db.on('error', err => {
-    if (err.code === 'PROTOCOL_CONNECTION_LOST') {
-        // db error reconnect
-        disconnect_handler();
-    } 
-    else {
-        throw err;
-    }
-});
-
 // getRandomInt
 function getRandomInt(max){
     return Math.floor(Math.random() * Math.floor(max));
