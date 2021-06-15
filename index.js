@@ -52,14 +52,25 @@ let possible_trois = [
 
 const db = new mysql.createConnection({
     host: "bmniqqpepppmdkmrvbrr-mysql.services.clever-cloud.com",
-    password: "G32BT7u20JvcM0oDC98e",
+    port:"3306",
+    database: "bmniqqpepppmdkmrvbrr",
     user: "uq0wcrb3hufidsi9",
-    database: "bmniqqpepppmdkmrvbrr"
+    password: "G32BT7u20JvcM0oDC98e"
 })
 
 db.connect(function (err) {
     if(err) throw err;
     console.log('Connection reussi')
+});
+
+db.on('error', err => {
+    if (err.code === 'PROTOCOL_CONNECTION_LOST') {
+        // db error reconnect
+        disconnect_handler();
+    } 
+    else {
+        throw err;
+    }
 });
 
 // getRandomInt
