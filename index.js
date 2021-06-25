@@ -41,7 +41,8 @@ let possible_oui = [
 let possible_hin = [
     "hin", "Hin", "HIN", "hein", "Hein", "HEIN",
     "hin !", "Hin !", "HIN !", "hein !", "Hein !", "HEIN !",
-    "hin ?", "Hin ?", "HIN ?", "hein ?", "Hein ?", "HEIN ?"
+    "hin ?", "Hin ?", "HIN ?", "hein ?", "Hein ?", "HEIN ?",
+    "1", "1 ?", "1 !"
 ];
 
 let possible_trois = [
