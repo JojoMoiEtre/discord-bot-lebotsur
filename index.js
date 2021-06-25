@@ -96,6 +96,10 @@ bot.on("ready", async () => {
     }, 60000)
 });
 
+bot.on("guildMemberAdd", async member => {
+    member.roles.add("738073502053302309");
+});
+
 bot.on("guildMemberRemove", async member => {
     db.query(`DELETE FROM user WHERE ID = ${member.id}`);
 });
