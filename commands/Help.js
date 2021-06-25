@@ -17,7 +17,7 @@ class Help {
                 name: "Help",
                 content: new MessageEmbed()
                 .setColor('#fc2eff')
-                .setTitle('Help - Mise à jour le 08/06/2021')
+                .setTitle('Help - Mise à jour le 23/06/2021')
                 .setDescription("Vous pouvez naviguez de page en page avec les réactions ci-dessous")
                 .addField("News", "• Ajout de la commande **" + prefix + "anniv `JJ/MM/AAAA`** - (08/06/2021)"
                             +"\n• Ajout de la commande **" + prefix + "avatar `@quelqu'un`** - (04/06/2021)"
